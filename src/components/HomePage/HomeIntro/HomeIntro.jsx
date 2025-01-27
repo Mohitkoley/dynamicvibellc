@@ -1,13 +1,14 @@
 import React from 'react'
 import './homeIntro.css';
 import {useNavigate} from 'react-router-dom';
+import logo from "../../../assets/images/logo.png";
 const HomeIntro = () => {
     const navigate = useNavigate();
     return (
         <section id='Home' className='pt-6 mb-16 overflow-x-hidden flex flex-col items-center justify-center' >
             <div className="w-full h-1/5 text-white  flex flex-col justify-center items-center gap-2 mb-16">
-                <div className='logo text-6xl font-lobster'>Logo</div>
-                <div className='tagline text-lg font-light'>Space for tagline</div>
+            <img src={logo} alt="Logo" className="logo w-40 h-32" />
+                {/* <div className='tagline text-lg font-light'>Space for tagline</div> */}
 
             </div>
             <div className="w-full text-center lg:text-6xl text-4xl text-white m-4 mb-12 ">
