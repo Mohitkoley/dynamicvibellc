@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.imageWrapper {
+    display: inline-block;
+    background: linear-gradient(to bottom, #01C5FD, #0144E4);
+    padding: 4px;
+    border-radius: 8px;
+    position: relative;
+    width: 100%; 
+    max-width: 80%;
+    margin: 0 auto; 
+    height: auto;
+}
+
+.imageWrapper img {
+    display: block;
+    border-radius: 6px;
+    height: auto; 
+    width: 100%;
+}
+
+.imageContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.imageWithGradient {
+    width: 100%; 
+    height: auto; 
+}
+.textOverlayContainer {
+    position: absolute;
+    background-color: #001036;
+    border: 2px solid #0144E4;
+    border-radius: 8px;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textOverlay {
+    color: white;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
