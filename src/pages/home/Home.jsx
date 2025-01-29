@@ -35,7 +35,7 @@ const Home = () => {
             </div>
             <div className="flex justify-center m-auto lg:gap-8 gap-4 md:flex-row flex-col">
                 <a className="btn bg-button-bg" href='https://dvlimousines.com/'><span className="lg:text-2xl text-xl">Car Rentals</span></a>
-                <button className="btn bg-button-bg" onClick={()=> navigate("/partyrentals/")}><span className="lg:text-2xl text-xl">Party Rentals</span></button>
+                <a className="btn bg-button-bg" href='https://dvpartyrentals.com/'><span className="lg:text-2xl text-xl">Party Rentals</span></a>
             </div>
         </section>
       </div>
