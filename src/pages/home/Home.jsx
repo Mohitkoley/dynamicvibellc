@@ -4,11 +4,9 @@ import AboutUs from '../../components/HomePage/AboutUs/AboutUs';
 import Services from '../../components/HomePage/Services/Services';
 import Footer from '../../components/Footer/Footer';
 import logo from "../../assets/images/logo.png";
-import {useNavigate} from 'react-router-dom';
 
 
 const Home = () => {
-  const navigate = useNavigate();
   const aboutUsRef = useRef(null);
   const servicesRef = useRef(null);
   const homeIntroRef = useRef(null);
