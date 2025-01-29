@@ -1,4 +1,3 @@
-import React from 'react'
 import {Phone,Mail,MapPin,Calendar,ArrowRight,} from 'lucide-react'
 import Navbar from '../../../components/PartyRentalsPage/Navbar';
 import Footer from '../../../components/Footer/Footer';
@@ -12,7 +11,7 @@ const ClearTopPackages = () => {
                 </div>
                 <div className="min-h-screen bg-custom-gradient-2">
                     {/* Hero Section */}
-                    <div className="relative bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 text-white">
+                    <div className="relative bg-custom-gradient-2 text-white" style={{ backgroundImage: 'url(/src/assets/images/Packages/cleartop-banner.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} >
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                             <div className="text-center">
                                 <h1 className="text-5xl font-bold mb-6">
@@ -28,7 +27,7 @@ const ClearTopPackages = () => {
                         </div>
 
                         {/* Special Offer Banner */}
-                        <div className="bg-red-900 py-3">
+                        <div className="bg-custom-gradient-2 py-3">
                             <div className="max-w-7xl mx-auto px-4 text-center">
                                 <span className="font-bold">
                                     JANUARY SPECIAL:
@@ -243,7 +242,7 @@ const ClearTopPackages = () => {
                         </div>{' '}
                     </div>
                     {/* CTA Section */}
-                    <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 text-white py-16">
+                    <div className="bg-custom-gradient-2 text-white py-16">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                             <h2 className="text-3xl font-bold mb-8">
                                 Get Your Rental Quote Today

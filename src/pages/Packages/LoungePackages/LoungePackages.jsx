@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, Mail, MapPin, } from 'lucide-react';
 import Navbar from '../../../components/PartyRentalsPage/Navbar';
 import Footer from '../../../components/Footer/Footer';
@@ -12,7 +11,7 @@ const LoungePackages = () => {
         </div>
         <div className="min-h-screen bg-custom-gradient-2">
           {/* Hero Section */}
-          <div className="relative bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 text-white">
+          <div className="relative bg-custom-gradient-2 text-white" style={{ backgroundImage: 'url(/src/assets/images/Packages/Lounge-package-banner.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
               <div className="text-center">
                 <h1 className="text-5xl font-bold mb-6">Lounge Packages</h1>
@@ -130,12 +129,6 @@ const LoungePackages = () => {
                     </ul>
                   </div>
                 ))}
-              </div>
-              <p className="text-center mt-4 text-gray-400">We are a dedicated team ready to serve you. Our quality of work and commitment, along with excellent pricing, has set us apart from the competition.</p>
-              <div className="text-center mt-8">
-                <a href="#contact" className="inline-flex items-center bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-400 transition-colors">
-                  Get A Rental Quote
-                </a>
               </div>
             </div>
           </div>

@@ -1,20 +1,18 @@
-import React from 'react'
 import { Tent } from 'lucide-react';
 import Navbar from '../../../components/PartyRentalsPage/Navbar';
 import Footer from '../../../components/Footer/Footer';
+import sl1 from "../../../assets/images/Skylight/sl1.jpg";
+import sl2 from "../../../assets/images/Skylight/sl2.jpg";
+import sl3 from "../../../assets/images/Skylight/sl3.jpg";
+import sl4 from "../../../assets/images/Skylight/sl4.jpg";
+import sl5 from "../../../assets/images/Skylight/sl5.jpg";
+import sl6 from "../../../assets/images/Skylight/sl6.jpg";
 
 const Skylight = () => {
   const images = [
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x50-w-Window-Sidewallsjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/pinkjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x30-Clear-Sides-Custom-Decor-5jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x20-Pastel-Birthday-White-Chiavari-2jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/The-Lakehouse-1-Social-Media-Sizejpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/40X100-Premium-Chappaqua-3jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/pic-5jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x40-Pole-Covers-Blue-Lightsjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/40x100-w-Sidewallsjpg_resized-400x284.jpg"
+    sl1,sl2,sl3,sl4,sl5,sl6,
   ];
+  
   return (
     <>
       <div className='HomeContainer bg-custom-gradient-2 w-screen min-h-screen overflow-x-hidden'>

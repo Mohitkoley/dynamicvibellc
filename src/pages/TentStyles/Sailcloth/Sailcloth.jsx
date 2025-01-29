@@ -1,19 +1,19 @@
-import React from 'react';
 import { Tent } from 'lucide-react';
 import Navbar from '../../../components/PartyRentalsPage/Navbar';
 import Footer from '../../../components/Footer/Footer';
+import sc1 from "../../../assets/images/Sailcloth/sc1.jpg";
+import sc2 from "../../../assets/images/Sailcloth/sc2.jpg";
+import sc3 from "../../../assets/images/Sailcloth/sc3.jpg";
+import sc4 from "../../../assets/images/Sailcloth/sc4.jpg";
+import sc5 from "../../../assets/images/Sailcloth/sc5.jpg";
+import sc6 from "../../../assets/images/Sailcloth/sc6.jpg";
+import sc7 from "../../../assets/images/Sailcloth/sc7.jpg";
+import sc8 from "../../../assets/images/Sailcloth/sc8.jpg";
+import sc9 from "../../../assets/images/Sailcloth/sc9.jpg";
 
 const Sailcloth = () => {
   const images = [
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x50-w-Window-Sidewallsjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/pinkjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x30-Clear-Sides-Custom-Decor-5jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x20-Pastel-Birthday-White-Chiavari-2jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/The-Lakehouse-1-Social-Media-Sizejpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/40X100-Premium-Chappaqua-3jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/pic-5jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x40-Pole-Covers-Blue-Lightsjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/40x100-w-Sidewallsjpg_resized-400x284.jpg"
+    sc1,sc2,sc3,sc4,sc5,sc6,sc7,sc8,sc9,
   ];
   return (
     <>

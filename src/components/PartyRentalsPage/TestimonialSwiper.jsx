@@ -3,6 +3,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
+// import "./Testimonial.css";
 
 const testimonials = [
   {
@@ -39,7 +40,7 @@ const testimonials = [
 
 const TestimonialSwiper = () => {
   return (
-    <div className='bg-custom-gradient mx-10'>
+    <div className='bg-custom-gradient-2 mx-10'>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={50}

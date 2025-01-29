@@ -27,7 +27,7 @@ const Lighting = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {lightingOptions.map((light, index) => (
                 <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
-                  <img src={light.image} alt={light.name} className="mb-2 w-24 h-24 object-cover" />
+                  <img src={light.image} alt={light.name} className="mb-2 w-30 h-30 object-cover" />
                   <h3 className="text-lg font-medium text-white text-center">{light.name}</h3>
                 </div>
               ))}

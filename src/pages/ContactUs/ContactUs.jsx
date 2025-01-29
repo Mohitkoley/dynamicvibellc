@@ -1,17 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import './contact.css'
-import Reviews from '../../components/HomePage/Reviews/Reviews';
+
 
 const LimousineService = () => {
     const [isFixed, setIsFixed] = useState(false);
 
     // Refs for sections
     const logoRef = useRef(null);
-    const aboutUsRef = useRef(null);
-    const reviewsRef = useRef(null);
-    const contactUsRef = useRef(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,22 +21,17 @@ const LimousineService = () => {
             }
         );
 
-        if (logoRef.current) {
-            observer.observe(logoRef.current);
+        const currentLogoRef = logoRef.current;
+        if (currentLogoRef) {
+            observer.observe(currentLogoRef);
         }
 
         return () => {
-            if (logoRef.current) {
-                observer.unobserve(logoRef.current);
+            if (currentLogoRef) {
+                observer.unobserve(currentLogoRef);
             }
         };
     }, []);
-
-    const scrollToSection = (ref) => {
-        if (ref.current) {
-            ref.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
 
     return (

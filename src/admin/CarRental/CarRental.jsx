@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./CarRental.css";  
 import { FaBars, FaCar, FaUsers, FaGlassCheers } from "react-icons/fa";
-import dynamicmainpagelogo from '../../assets/adminImages/dynamicmainpagelogo.png'
+import dynamicmainpagelogo from '../../assets/images/logo.png';
 import { Link,useLocation  } from "react-router-dom";
 
 const Dashboard = () => {

@@ -1,25 +1,13 @@
-import React, { useRef } from 'react';
 import './partyRentals.css';
-// import AboutUs from '../../components/CarRentalsPage/AboutUs/AboutUs';
-// import Services from '../../components/CarRentalsPage/Services/Services';
-import Footer from '../../components/CarRentalsPage/Footer/Footer';
+import Footer from "../../components/Footer/Footer";
 import TentPackages from '../../components/PartyRentalsPage/TentPackages';
 import Navbar from '../../components/PartyRentalsPage/Navbar';
 import TestimonialSwiper from '../../components/PartyRentalsPage/TestimonialSwiper';
+import { useNavigate } from 'react-router-dom';
 
 const PartyRentals = () => {
-    const logoRef = useRef(null);
-    const aboutUsRef = useRef(null);
-    const servicesRef = useRef(null);
-    const reviewsRef = useRef(null);
-    const quoteRequestRef = useRef(null);
-    const contactUsRef = useRef(null);
-    
-    const scrollToSection = (ref) => {
-      if (ref.current) {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
+
+  const navigate = useNavigate();
 
   const asSeenOnLogos = [
     'https://litentrentals.com/wp-content/uploads/2023/02/news12_logo.png',
@@ -31,40 +19,51 @@ const PartyRentals = () => {
     {
       title: 'Tables & Chairs',
       image: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=800',
+      link: '/tablesandchairs'
     },
     {
       title: 'Linens',
       image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800',
+      link: '/linens'
     },
     {
       title: 'Lighting',
       image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+      link: '/lighting'
     },
     {
       title: 'Flooring',
       image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=800',
+      link: '/flooring'
     },
     {
       title: 'Bars',
       image: 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?auto=format&fit=crop&q=80&w=800',
+      link: '/bars'
     },
     {
       title: 'Lounge Furniture',
       image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&q=80&w=800',
+      link: '/loungeinventory'
     },
     {
       title: 'Backdrops & Draping',
       image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800',
+      link: '/backdropsanddraping'
     },
     {
       title: 'Rustic',
       image: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=800',
+      link: '/rusticinventory'
     },
     {
       title: 'Décor',
       image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
+      link: '/decorinventory'
     }
   ];
+
+  console.log("Checking from PartyRentals");
 
   return (
     <div className='HomeContainer bg-custom-gradient-2 w-screen min-h-screen overflow-x-hidden'>
@@ -73,11 +72,11 @@ const PartyRentals = () => {
       </div>
       <div className='text-center'>
       <div className="Heading text-4xl md:text-6xl text-white font-semibold text-center block m-8">
-         <p><span className='text-gradient'>Long Island's,</span> Premier Tent & Event Rental Source</p>
+         <p><span className='text-gradient'>Long Island&apos;s,</span> Premier Tent & Event Rental Source</p>
       </div>
-      <div className="SubHeading text-sm text-white text-center block m-6">
+      <div className="SubHeading text-sm text-white text-center block m-6 px-36">
         <p style={{textAlign: "center"}}>
-          Long Island's Premier Tent & Event Rental Source offers a wide range of elegant tent styles and essential event items, ensuring a memorable experience for any occasion. They cater to various events, providing high-quality rentals and exceptional service to meet clients' needs. The company specializes in providing comprehensive tent and event rental solutions, making it a go-to choice for clients in Long Island.
+          Long Island&apos;s Premier Tent & Event Rental Source offers a wide range of elegant tent styles and essential event items, ensuring a memorable experience for any occasion. They cater to various events, providing high-quality rentals and exceptional service to meet clients&apos; needs. The company specializes in providing comprehensive tent and event rental solutions, making it a go-to choice for clients in Long Island.
         </p>
 
       </div>
@@ -125,7 +124,7 @@ const PartyRentals = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                   <div className="text-center">
                     <h3 className="text-white text-2xl font-bold mb-2">{item.title}</h3>
-                    <button className="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
+                    <button onClick={() => navigate(`${item.link}`)} className="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">
                       Read More
                     </button>
                   </div>
@@ -136,24 +135,10 @@ const PartyRentals = () => {
         </div>
       </section>
     </div>
-      {/* <div ref={aboutUsRef}>
-        <AboutUs />
-      </div>
-      <div ref={servicesRef}>
-        <Services />
-      </div> */}
-      <div ref={reviewsRef}>
-        {/* <Reviews /> */}
+      <div>
         <TestimonialSwiper />
       </div>
-      <Footer
-        scrollToSection={scrollToSection}
-        aboutUsRef={aboutUsRef}
-        servicesRef={servicesRef}
-        homeIntroRef={logoRef}
-        contactUsRef={contactUsRef}
-        quoteRequestRef={quoteRequestRef}
-      />
+      <Footer />
     </div>
   )
 }

@@ -43,7 +43,7 @@ const HeatingAndCooling = () => {
                   <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
                     <h3 className="text-xl font-semibold text-white text-center mb-2">{item.name}</h3>
                     {item.images.map((image, imgIndex) => (
-                      <img key={imgIndex} src={image} alt={item.name} className="mb-2 w-24 h-24 object-cover" />
+                      <img key={imgIndex} src={image} alt={item.name} className="mb-2 w-30 h-30 object-cover" />
                     ))}
                     <p className="text-gray-300 text-center">{item.description.split('\n').map((line, i) => <React.Fragment key={i}>{line}<br /></React.Fragment>)}</p>
                   </div>

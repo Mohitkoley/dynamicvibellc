@@ -1,20 +1,21 @@
-import React from 'react'
 import { Tent } from 'lucide-react';
 import Navbar from '../../../components/PartyRentalsPage/Navbar';
 import Footer from '../../../components/Footer/Footer';
+import wft1 from '../../../assets/images/Tent Styles/wft1.jpg';
+import wft2 from '../../../assets/images/Tent Styles/wft2.jpg';
+import wft3 from '../../../assets/images/Tent Styles/wft3.jpg';
+import wft4 from '../../../assets/images/Tent Styles/wft4.jpg';
+import wft5 from '../../../assets/images/Tent Styles/wft5.jpg';
+import wft6 from '../../../assets/images/Tent Styles/wft6.jpg';
+import wft7 from '../../../assets/images/Tent Styles/wft7.jpg';
+import wft8 from '../../../assets/images/Tent Styles/wft8.jpg';
+import wft9 from '../../../assets/images/Tent Styles/wft9.jpg';
+
 
 const WhiteFrameTents = () => {
-  const images = [
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x50-w-Window-Sidewallsjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/pinkjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x30-Clear-Sides-Custom-Decor-5jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x20-Pastel-Birthday-White-Chiavari-2jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/The-Lakehouse-1-Social-Media-Sizejpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/40X100-Premium-Chappaqua-3jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/pic-5jpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/20x40-Pole-Covers-Blue-Lightsjpg_resized-400x284.jpg",
-    "https://litentrentals.com/wp-content/uploads/2023/02/40x100-w-Sidewallsjpg_resized-400x284.jpg"
-  ];
+  
+  const images = [wft1,wft2,wft3,wft4,wft5,wft6,wft7,wft8,wft9,];
+
   return (
     <>
     <div className='HomeContainer bg-custom-gradient-2 w-screen min-h-screen overflow-x-hidden'>

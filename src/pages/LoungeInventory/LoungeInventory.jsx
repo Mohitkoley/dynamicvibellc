@@ -74,7 +74,7 @@ const LoungeInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {loungeFurnitureData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -90,7 +90,7 @@ const LoungeInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {tableData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -106,7 +106,7 @@ const LoungeInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {seatingData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -122,7 +122,7 @@ const LoungeInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {statementPiecesData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}

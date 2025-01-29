@@ -77,7 +77,7 @@ const TablesAndChairs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {tableData.map((table, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
-                <img src={table.image} alt={table.name} className="mb-2 w-24 h-24 object-cover" />
+                <img src={table.image} alt={table.name} className="mb-2 w-30 h-30 object-cover" />
                 <h3 className="text-lg font-medium text-white text-center">{table.name}</h3>
                 {table.description && <p className="text-gray-400 text-center">{table.description}</p>}
               </div>
@@ -90,7 +90,7 @@ const TablesAndChairs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {foldingChairData.map((chair, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
-                <img src={chair.image} alt={chair.name} className="mb-2 w-24 h-24 object-cover" />
+                <img src={chair.image} alt={chair.name} className="mb-2 w-30 h-30 object-cover" />
                 <h3 className="text-lg font-medium text-white text-center">{chair.name}</h3>
               </div>
             ))}
@@ -102,7 +102,7 @@ const TablesAndChairs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {chiavariChairData.map((chair, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
-                <img src={chair.image} alt={chair.name} className="mb-2 w-24 h-24 object-cover" />
+                <img src={chair.image} alt={chair.name} className="mb-2 w-30 h-30 object-cover" />
                 <h3 className="text-lg font-medium text-white text-center">{chair.name}</h3>
               </div>
             ))}
@@ -114,7 +114,7 @@ const TablesAndChairs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {crossbackChairData.map((chair, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
-                <img src={chair.image} alt={chair.name} className="mb-2 w-24 h-24 object-cover" />
+                <img src={chair.image} alt={chair.name} className="mb-2 w-30 h-30 object-cover" />
                 <h3 className="text-lg font-medium text-white text-center">{chair.name}</h3>
               </div>
             ))}
@@ -126,7 +126,7 @@ const TablesAndChairs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {barstoolData.map((barstool, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center">
-                <img src={barstool.image} alt={barstool.name} className="mb-2 w-24 h-24 object-cover" />
+                <img src={barstool.image} alt={barstool.name} className="mb-2 w-30 h-30 object-cover" />
                 <h3 className="text-lg font-medium text-white text-center">{barstool.name}</h3>
               </div>
             ))}

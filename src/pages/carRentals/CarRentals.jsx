@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './carRentals.css';
 import { useNavigate } from 'react-router-dom';
 import AboutUs from '../../components/CarRentalsPage/AboutUs/AboutUs';
 import Services from '../../components/CarRentalsPage/Services/Services';
 import Fleets from '../../components/CarRentalsPage/Fleets/Fleets';
-import Reviews from '../../components/HomePage/Reviews/Reviews';
 import Footer from '../../components/CarRentalsPage/Footer/Footer';
 import ContactUs from '../../components/CarRentalsPage/ContactUs/ContactUs';
 
@@ -116,7 +115,7 @@ const CarRentals = () => {
         <ContactUs />
       </div>
       <div ref={reviewsRef}>
-        <Reviews />
+       
       </div>
 
       <Footer

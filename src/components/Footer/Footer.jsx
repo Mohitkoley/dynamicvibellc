@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Instagram, Facebook, } from '@mui/icons-material';
 import logo from "../../assets/images/logo.png"

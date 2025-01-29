@@ -1,4 +1,3 @@
-import React from 'react'
 import './homeIntro.css';
 import {useNavigate} from 'react-router-dom';
 import logo from "../../../assets/images/logo.png";
@@ -19,7 +18,6 @@ const HomeIntro = () => {
                 <button className="btn bg-button-bg" onClick={()=> navigate("/carrentals/")}><span className="lg:text-2xl text-xl">Car Rentals</span></button>
                 <button className="btn bg-button-bg" onClick={()=> navigate("/partyrentals/")}><span className="lg:text-2xl text-xl">Party Rentals</span></button>
             </div>
-
         </section>
     )
 }

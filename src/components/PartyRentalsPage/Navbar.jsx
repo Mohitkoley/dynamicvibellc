@@ -1,11 +1,10 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/images/logo.png"
 
 const Navbar = () => {
     const [isFixed, setIsFixed] = useState(false);
-    const logoRef = useRef(null); // Refs for sections
-    // const reviewsRef = useRef(null);
+    const logoRef = useRef(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -121,7 +120,6 @@ const Navbar = () => {
               <a onClick={() => navigate('/customfabrication')}>Custom Fabrication</a>
             </div>
           </div>
-          {/* <span onClick={() => scrollToSection(reviewsRef)}>Reviews</span> */}
           <span onClick={()=>navigate('/request')}>Quote Request</span> 
         </div>
       </section>

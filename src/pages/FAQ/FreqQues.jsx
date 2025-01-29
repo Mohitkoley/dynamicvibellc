@@ -1,19 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
 import data from '../../assets/faqData/faqData';
 import { useNavigate } from 'react-router-dom';
-import Car from '@mui/icons-material/DirectionsCar';
 import './freqQues.css'
-import Reviews from '../../components/HomePage/Reviews/Reviews';
 
 const LimousineService = () => {
     const [isFixed, setIsFixed] = useState(false);
 
     // Refs for sections
     const logoRef = useRef(null);
-    const aboutUsRef = useRef(null);
-    const reviewsRef = useRef(null);
-    const contactUsRef = useRef(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -38,11 +32,6 @@ const LimousineService = () => {
         };
     }, []);
 
-    const scrollToSection = (ref) => {
-        if (ref.current) {
-            ref.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     if (!data) {
         return <div>Service not found.</div>;

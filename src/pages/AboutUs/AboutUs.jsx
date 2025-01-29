@@ -1,8 +1,7 @@
 import {useRef} from 'react';
 import './aboutus.css'
 import Navbar from '../../components/PartyRentalsPage/Navbar';
-import Reviews from '../../components/HomePage/Reviews/Reviews';
-import Footer from '../../components/CarRentalsPage/Footer/Footer';
+import Footer from "../../components/Footer/Footer"
 
 const AboutUs = () => {
   const logoRef = useRef(null);
@@ -87,9 +86,7 @@ const AboutUs = () => {
             </blockquote>
           </div>
         </section> */}
-        <div>
-         <Reviews />
-        </div>
+
 
         {/* Who We Serve Section */}
         <section className="whoWeServeSection bg-black/50 text-white py-20 px-6 md:px-20 text-center">

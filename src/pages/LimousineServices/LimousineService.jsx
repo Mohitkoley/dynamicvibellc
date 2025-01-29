@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import data from '../../assets/LimousineServiceData/LimoData';
 import { useNavigate } from 'react-router-dom';
 import Car from '@mui/icons-material/DirectionsCar';
 import './limousine.css'
-import Reviews from '../../components/HomePage/Reviews/Reviews';
 
 const LimousineService = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -45,7 +44,6 @@ const LimousineService = () => {
   };
 
   const { serviceType } = useParams();
-  const normalizedServiceType = serviceType ? serviceType.charAt(0).toUpperCase() + serviceType.slice(1) : '';  // Capitalize first letter
 
   const serviceData = data[serviceType] ? data[serviceType][0] : null;
 
@@ -139,10 +137,6 @@ const LimousineService = () => {
             </div>
           </div>
         </section>
-
-        <div ref={reviewsRef}>
-          <Reviews />
-        </div>
       </div>
     </div>
   );

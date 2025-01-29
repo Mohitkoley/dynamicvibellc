@@ -85,7 +85,7 @@ const DecorInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {decorativeLightingData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -97,7 +97,7 @@ const DecorInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {backdropsData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -109,7 +109,7 @@ const DecorInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {cardBoxesData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -121,7 +121,7 @@ const DecorInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {chargersData.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <img src={item.image} alt={item.name} className="mb-2 w-24 h-24 object-cover rounded-lg" />
+                <img src={item.image} alt={item.name} className="mb-2 w-30 h-30 object-cover rounded-lg" />
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
@@ -133,7 +133,7 @@ const DecorInventory = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {decorElements.map((item, index) => (
               <div key={index} className="bg-gray-900 p-4 rounded-lg flex flex-col items-center transform hover:scale-105 transition-transform">
-                <div className="mb-2 w-24 h-24 rounded-lg" style={{ backgroundColor: item.color }}></div>
+                <div className="mb-2 w-30 h-30 rounded-lg" style={{ backgroundColor: item.color }}></div>
                 <h3 className="text-lg font-medium text-white text-center">{item.name}</h3>
               </div>
             ))}
