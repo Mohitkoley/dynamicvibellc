@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { AiFillFacebook } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
+import logo from "../../assets/images/logo.png"
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Footer = () => {
         {/* Footer Logo */}
         <span className="FooterLogo font-lobster text-gradient text-4xl md:mr-6 cursor-pointer"
         >
-          <img src="https://dvlimousines.com/assets/logo-umISEg_G.png"  alt="Logo" className="logo w-20 h-12" />
+          <img src={logo}  alt="Logo" className="logo w-20 h-12" />
         </span>
       </div>
 

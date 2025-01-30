@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import luxuryCar from '../../../assets/images/luxury-car.jpg'; // You'll need to add this image
-import luxuryInterior from '../../../assets/images/luxury-interior.jpg'; // You'll need to add this image
+import luxuryCar from "../../../assets/images/Car7.png";
+import luxuryInterior from '../../../assets/images/Car6.png';
 
 const AboutUs = () => {
   const fadeInUp = {
@@ -69,7 +69,7 @@ const AboutUs = () => {
               className="relative rounded-2xl overflow-hidden shadow-2xl"
             >
               <img
-                src="https://dvlimousines.com/assets/Car3-srlAxvVO.jpg"
+                src={luxuryCar}
                 alt="Luxury Car"
                 className="w-full h-[300px] object-cover"
               />
@@ -83,7 +83,7 @@ const AboutUs = () => {
               className="relative rounded-2xl overflow-hidden shadow-2xl lg:-ml-12"
             >
               <img
-                src="https://dvlimousines.com/assets/Car5-Dl6PSA-W.png"
+                src={luxuryInterior}
                 alt="Luxury Interior"
                 className="w-full h-[250px] object-cover"
               />

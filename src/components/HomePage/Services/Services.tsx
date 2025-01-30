@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import party from "../../../assets/images/party.jpg";
+import car from "../../../assets/images/carride.jpg";
 
 const Services = () => {
   const fadeInUp = {
@@ -29,11 +31,8 @@ const Services = () => {
 
         {/* Car Ride Service */}
         <div className="service-container flex flex-col md:flex-row items-center md:items-start mb-12">
-          <motion.div
-            {...fadeInUp}
-            className="image-container transition-all duration-500 p-1 md:w-1/2"
-          >
-            <img src="https://dvlimousines.com/assets/Car3-srlAxvVO.jpg" alt="Car Ride Service" className="w-full h-[300px] object-cover rounded-2xl shadow-2xl" />
+          <motion.div {...fadeInUp} className="image-container transition-all duration-500 p-1 md:w-1/2">
+            <img src={car} alt="Car Ride Service" className="w-full h-[300px] object-cover rounded-2xl shadow-2xl" />
           </motion.div>
           <motion.div
             {...fadeInUp}
@@ -48,20 +47,14 @@ const Services = () => {
 
         {/* Party Service */}
         <div className="service-container flex flex-col md:flex-row items-center md:items-start">
-          <motion.div
-            {...fadeInUp}
-            className="text-container md:w-1/2 md:pr-8 mb-6 md:mb-0 text-center md:text-left"
-          >
+          <motion.div {...fadeInUp} className="text-container md:w-1/2 md:pr-8 mb-6 md:mb-0 text-center md:text-left">
             <h2 className="text-2xl font-bold mb-4 text-white">Party Service</h2>
             <p className="text-lg leading-relaxed text-gray-200">
               Make your celebrations unforgettable with our premium party services. From transportation to event planning, we’ve got you covered for a memorable experience.
             </p>
           </motion.div>
-          <motion.div
-            {...fadeInUp}
-            className="image-container transition-all duration-500 p-1 md:w-1/2"
-          >
-            <img src="https://dvlimousines.com/assets/Car5-Dl6PSA-W.png" alt="Party Service" className="w-full h-[300px] object-cover rounded-2xl shadow-2xl" />
+          <motion.div {...fadeInUp} className="image-container transition-all duration-500 p-1 md:w-1/2">
+            <img src={party} alt="Party Service" className="w-full h-[300px] object-cover rounded-2xl shadow-2xl" />
           </motion.div>
         </div>
       </div>

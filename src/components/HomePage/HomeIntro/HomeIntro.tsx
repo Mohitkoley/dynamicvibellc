@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import logo from "../../../assets/images/logo.png"
 
 const HomeIntro = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const HomeIntro = () => {
       <div className="flex flex-col items-center justify-center space-y-12">
         <div className="animate-fade-in-down">
           <img 
-            src="https://dvlimousines.com/assets/logo-umISEg_G.png" 
+            src={logo}
             alt="Logo" 
             className="w-48 h-40 object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105"
           />
@@ -25,7 +26,7 @@ const HomeIntro = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 mt-12">
-        <a
+          <a
             href="https://dvlimousines.com/"
             className="group relative px-8 py-4 overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium shadow-lg hover:shadow-2xl transition-all duration-300"
           >
@@ -34,7 +35,6 @@ const HomeIntro = () => {
               <span className="text-xl md:text-2xl font-medium text-white">Car Rentals</span>
             </div>
           </a>
-          
           <a
             href="https://dvpartyrentals.com/"
             className="group relative px-8 py-4 overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium  shadow-lg hover:shadow-2xl transition-all duration-300"
