@@ -1,70 +1,88 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "axios"; // Use Axios for API calls
+import "./login.css";
+import dynamicmainpagelogo from '../../assets/adminImages/dynamicmainpagelogo.png'
 import { useNavigate } from "react-router-dom";
-import dynamicmainpagelogo from "../../assets/images/logo.png";
+import { stringify } from "ajv";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); // For error messages
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    // Clear any previous error messages
     setError("");
+
     try {
-      const apiUrl = "https://dynamicvibellc.com/api/v1/admin/email-login";
-      const response = await axios.post(apiUrl, { email, password });
+      // Replace with your actual API endpoint
+      const apiUrl = "http://[::1]:5000/api/v1/admin/email-login";
+
+      // Make the API call
+      const response = await axios.post(apiUrl, {
+        email: email,
+        password: password,
+      });
+      console.log(response.data);
+      // Handle success
       if (response.data) {
+        console.log(response.data.data);
+
+        alert("Login successful!");
+        // Redirect user or save the token in local storage
         localStorage.setItem("token", JSON.stringify(response.data.data));
-        navigate("/admin/dashboard/car-rental");
+        navigate("/admin/dashboard/car-rental"); // Redirect using React Router
       }
     } catch (err) {
+      // Handle errors
+      console.error("Login error:", err.response?.data || err.message);
       setError(err.response?.data?.message || "Login failed. Please try again.");
     }
   };
 
   return (
-    <div className="flex flex-col items-center w-full h-screen justify-center bg-gray-100">
-      <div className="mb-5 max-w-[150px]">
+    <div className="login-page">
+      <div className="page-logo">
         <img
           src={dynamicmainpagelogo}
           alt="Company Logo"
-          className="w-full h-auto bg-orange-500 p-5 rounded-lg animate-fadeInScale"
+          className="logo-login"
         />
       </div>
-      <div className="flex justify-center items-center w-full">
-        <div className="bg-white p-8 rounded-lg shadow-lg w-[400px] text-center max-w-full">
-          <h2 className="text-2xl font-bold text-gray-800 mb-5">Admin Panel Login</h2>
-          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+      <div className="login-container">
+        <div className="form-container">
+          <h2 className="login-title">Admin Panel Login</h2>
+          {error && <p className="error-message">{error}</p>} {/* Show error */}
           <form onSubmit={handleLogin}>
-            <div className="mb-4 text-left">
-              <label htmlFor="email" className="block text-sm font-bold text-gray-700">Email</label>
+            <div className="input-group">
+              <label htmlFor="email" className="label">Email</label>
               <input
                 type="email"
                 id="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded mt-1 text-sm"
+                className="input"
                 required
               />
             </div>
-            <div className="mb-4 text-left">
-              <label htmlFor="password" className="block text-sm font-bold text-gray-700">Password</label>
+            <div className="input-group">
+              <label htmlFor="password" className="label">Password</label>
               <input
                 type="password"
                 id="password"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded mt-1 text-sm"
+                className="input"
                 required
               />
             </div>
-            <button type="submit" className="w-full p-3 bg-blue-500 text-white rounded font-bold text-lg hover:bg-blue-700 transition">
-              Login
-            </button>
+            <button type="submit" className="button">Login</button>
           </form>
         </div>
       </div>
