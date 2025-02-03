@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     setError("");
     try {
-      const apiUrl = "http://localhost:5000/api/v1/admin/email-login";
+      const apiUrl = "https://dynamicvibellc.com/api/v1/admin/email-login";
       const response = await axios.post(apiUrl, { email, password });
       if (response.data) {
         localStorage.setItem("token", JSON.stringify(response.data.data));
