@@ -17,7 +17,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     // Fetch user data from the server
-    axios.get(`http://[::1]:5000/api/v1/admin/user?login=true`, {
+    axios.get(`https://dynamicvibellc.com/api/v1/admin/user?login=true`, {
       headers: {
         'Authorization': `Bearer ${token.Authorization}`
       }
@@ -37,7 +37,7 @@ const UserProfile = () => {
     // Update user data on the server'
     const updatedData = { ...data, id: userData.id };
     console.log(updatedData);
-    axios.post('http://[::1]:5000/api/v1/admin/user', updatedData, {
+    axios.post('https://dynamicvibellc.com/api/v1/admin/user', updatedData, {
       headers: {
         'Authorization': `Bearer ${token.Authorization}`
       }

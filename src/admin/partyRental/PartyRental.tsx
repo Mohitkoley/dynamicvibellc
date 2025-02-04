@@ -35,7 +35,7 @@ const Dashboard = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://[::1]:5000/api/v1/admin/user?role=SALESMAN', {
+      const response = await fetch('https://dynamicvibellc.com/api/v1/admin/user?role=SALESMAN', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token.Authorization}`,
@@ -80,7 +80,7 @@ const Dashboard = () => {
       try {
 
 
-        const response = await fetch('http://[::1]:5000/api/v1/admin/rental-assign-user', {
+        const response = await fetch('https://dynamicvibellc.com/api/v1/admin/rental-assign-user', {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ const Dashboard = () => {
 
   const fetchContactData = async () => {
     try {
-      const response = await fetch('http://[::1]:5000/api/v1/admin/rental', {
+      const response = await fetch('https://dynamicvibellc.com/api/v1/admin/rental', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token.Authorization}`,
@@ -155,7 +155,7 @@ const Dashboard = () => {
   const handleStatusChange = async (contactId, newStatus) => {
     try {
       // Update status on the server
-      const response = await fetch('http://[::1]:5000/api/v1/admin/car-status', {
+      const response = await fetch('https://dynamicvibellc.com/api/v1/admin/car-status', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
