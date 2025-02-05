@@ -78,8 +78,6 @@ const Dashboard = () => {
   const handleAssign = async () => {
     if (selectedSalesperson) {
       try {
-
-
         const response = await fetch('https://dynamicvibellc.com/api/v1/admin/rental-assign-user', {
           method: 'PATCH',
           headers: {
@@ -91,11 +89,9 @@ const Dashboard = () => {
             contactId: selectedContactId, // Replace with the actual target ID
           }),
         });
-
         if (!response.ok) {
           throw new Error('Failed to assign salesperson');
         }
-
         const result = await response.json();
         closeModal();
       } catch (err) {
@@ -105,9 +101,6 @@ const Dashboard = () => {
       alert('Please select a salesperson');
     }
   };
-
-
-
 
   const getPageTitle = () => {
     if (location.pathname === "/admin/dashboard/car-rental") return "Car Rental Dashboard";
@@ -128,7 +121,6 @@ const Dashboard = () => {
       if (!response.ok) {
         throw new Error('Failed to fetch contact data');
       }
-
       const data = await response.json();
       setContactData(data.data);
     } catch (err) {
@@ -138,14 +130,25 @@ const Dashboard = () => {
     }
   };
 
+  console.log(contactData);
 
   useEffect(() => {
-
-
     fetchContactData();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [isPartyModalOpen, setIsPartyModalOpen] = useState(false);
+
+  const openContactModal = (contact) => {
+    setSelectedContact(contact);
+    setIsModalOpen(true);
+  };
+
+  const closePartyModal = () => {
+    setIsModalOpen(false);
+    setSelectedContact(null);
+  };
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -166,8 +169,6 @@ const Dashboard = () => {
           status: newStatus, // Replace with the actual target ID
         }),
       });
-
-
       if (!response.ok) {
         throw new Error('Failed to update status');
       }
@@ -191,10 +192,6 @@ const Dashboard = () => {
     { value: 'Converted', label: 'Converted' },
     { value: 'Rejected', label: 'Rejected' },
   ];
-
-
-
-
 
   return (
     <div className="dashboard-container">
@@ -257,56 +254,107 @@ const Dashboard = () => {
 
         <div className="page-content">
           {loading ? (
-            <p>Loading...</p>
-          ) : error ? (
-            <p>Error: {error}</p>
+            <div className="flex justify-center items-center min-h-[200px]">
+              <div className="w-10 h-10 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+            </div>
           ) : (
-            <table className="contact-table">
-              <thead>
+            <table className="min-w-full divide-y divide-gray-200 bg-white shadow-sm rounded-lg overflow-hidden">
+              <thead className="bg-gray-50">
                 <tr>
-                  <th>Name</th>
-                  <th>Phone No</th>
-                  <th>Email</th>
-                  <th>Service</th>
-                  <th>Message</th>
-                  <th>Status</th>
-                  <th>Actions</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Name</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Phone No</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Email</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Service</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Message</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Status</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Location</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Event Date</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Guest Count</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                {/* Repeat the tr for each contact */}
-                {contactData.map((contact) => (
-                  <tr key={contact.id}>
-                    <td>{contact.name}</td>
-                    <td>{contact.phone_number}</td>
-                    <td>{contact.email}</td>
-                    <td>{contact.service}</td>
-                    <td>{contact.message}</td>
-                    <td>{contact.status}</td>
-                    <td style={{ display: 'flex', alignItems: 'center' }}>
-
-                      <Select
-                        options={statusOptions}
-                        value={statusOptions.find((option) => option.value === contact.status)}
-                        onChange={(selectedOption) => handleStatusChange(contact.id, selectedOption.value)}
-                        placeholder="Select Status"
-                        isClearable={false}
-                        styles={{
-                          container: (provided) => ({
-                            ...provided,
-                            width: '150px',
-                          }),
-                        }}
-                      />
-
-                      <button onClick={() => openModal(contact.id)}>{contact.user_id ? contact.username : 'Assign to Salesperson'}</button>
-
+              <tbody className="bg-white divide-y divide-gray-200">
+                {contactData.map((contact, index) => (
+                  <tr key={contact.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td
+                      className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600"
+                      onClick={() => openContactModal(contact)}
+                    >
+                      {contact.name}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.phone_number}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.email}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.service}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.message}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.status}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.location}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {new Date(contact.event_date).toLocaleDateString()}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.guest_count}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm space-x-3">
+                      <div className="flex items-center gap-4">
+                        <Select
+                          options={statusOptions}
+                          value={statusOptions.find((option) => option.value === contact.status)}
+                          onChange={(selectedOption) => handleStatusChange(contact.id, selectedOption?.value || "pending")}
+                          placeholder="Select Status"
+                          isClearable={false}
+                          styles={{
+                            container: (provided) => ({
+                              ...provided,
+                              width: "150px",
+                            }),
+                          }}
+                        />
+                        <button
+                          onClick={() => openModal(contact.id)}
+                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
+                        >
+                          {contact.user_id ? contact.username : "Assign to Salesperson"}
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
-                {/* Add more rows here as needed */}
               </tbody>
             </table>
+          )}
+
+          {/* Modal */}
+          {isModalOpen && selectedContact && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-2xl">
+                <h2 className="text-xl font-semibold text-gray-800 mb-4">Contact Details</h2>
+                <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                  <p><span className="font-semibold">Name:</span> {selectedContact.name}</p>
+                  <p><span className="font-semibold">Phone:</span> {selectedContact.phone_number}</p>
+                  <p><span className="font-semibold">Email:</span> {selectedContact.email}</p>
+                  <p><span className="font-semibold">Service:</span> {selectedContact.service}</p>
+                  <p><span className="font-semibold">Message:</span> {selectedContact.message}</p>
+                  <p><span className="font-semibold">Status:</span> {selectedContact.status}</p>
+                  <p><span className="font-semibold">Location:</span> {selectedContact.location}</p>
+                  <p><span className="font-semibold">Event Date:</span> {new Date(selectedContact.event_date).toLocaleDateString()}</p>
+                  <p><span className="font-semibold">Guest Count:</span> {selectedContact.guest_count}</p>
+                  <p><span className="font-semibold">Event Type:</span> {selectedContact.event_type}</p>
+                  <p><span className="font-semibold">Tent Types:</span> {selectedContact.tent_types.join(", ")}</p>
+                  <p><span className="font-semibold">Table Types:</span> {selectedContact.table_types.join(", ")}</p>
+                  <p><span className="font-semibold">Chair Types:</span> {selectedContact.chair_types.join(", ")}</p>
+                  <p><span className="font-semibold">Lighting Types:</span> {selectedContact.lighting_types.join(", ")}</p>
+                  <p><span className="font-semibold">Dance Floor Types:</span> {selectedContact.dance_floor_types.join(", ")}</p>
+                  <p><span className="font-semibold">Bar Types:</span> {selectedContact.bar_types.join(", ")}</p>
+                  <p><span className="font-semibold">Accessory Types:</span> {selectedContact.accessory_types.join(", ")}</p>
+                </div>
+                <div className="flex justify-end mt-6">
+                  <button
+                    onClick={closeModal}
+                    className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-200"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
           )}
         </div>
 
@@ -394,10 +442,6 @@ const Dashboard = () => {
             </button>
           </div>
         </Modal>
-
-
-
-
       </main>
     </div>
   );

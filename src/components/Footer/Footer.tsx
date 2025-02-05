@@ -11,17 +11,12 @@ const Footer = () => {
       <div className="AboveLine w-full flex md:flex-row flex-col md:justify-between justify-center items-center mb-4 px-6">
         {/* Infolinks */}
         <div className="infolinks flex gap-6 flex-wrap md:mb-0 mb-4">
-          <span
-            className="cursor-pointer hover:underline"
-          >
+          <span className="cursor-pointer hover:underline">
             About Us
           </span>
-          <span
-            className="cursor-pointer hover:underline"
-          >
+          <span className="cursor-pointer hover:underline">
             Services
           </span>
-          <span className="cursor-pointer hover:underline">Contact Us</span>
         </div>
 
         {/* Footer Logo */}
