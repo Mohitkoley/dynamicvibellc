@@ -258,65 +258,50 @@ const Dashboard = () => {
               <div className="w-10 h-10 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
             </div>
           ) : (
-            <table className="min-w-full divide-y divide-gray-200 bg-white shadow-sm rounded-lg overflow-hidden">
-              <thead className="bg-gray-50">
+            <table className="contact-table">
+              <thead>
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Name</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Phone No</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Email</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Service</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Message</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Status</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Location</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Event Date</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Guest Count</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Actions</th>
+                  <th>Name</th>
+                  <th>Phone No</th>
+                  <th>Email</th>
+                  <th>Service</th>
+                  <th>Message</th>
+                  <th>Status</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {contactData.map((contact, index) => (
-                  <tr key={contact.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                    <td
-                      className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600"
-                      onClick={() => openContactModal(contact)}
-                    >
-                      {contact.name}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.phone_number}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.email}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.service}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.message}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.status}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.location}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {new Date(contact.event_date).toLocaleDateString()}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{contact.guest_count}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm space-x-3">
-                      <div className="flex items-center gap-4">
-                        <Select
-                          options={statusOptions}
-                          value={statusOptions.find((option) => option.value === contact.status)}
-                          onChange={(selectedOption) => handleStatusChange(contact.id, selectedOption?.value || "pending")}
-                          placeholder="Select Status"
-                          isClearable={false}
-                          styles={{
-                            container: (provided) => ({
-                              ...provided,
-                              width: "150px",
-                            }),
-                          }}
-                        />
-                        <button
-                          onClick={() => openModal(contact.id)}
-                          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
-                        >
-                          {contact.user_id ? contact.username : "Assign to Salesperson"}
-                        </button>
-                      </div>
+              <tbody>
+                {/* Repeat the tr for each contact */}
+                {contactData.map((contact) => (
+                  <tr key={contact.id}>
+                    <td className="cursor-pointer hover:text-blue-600" onClick={() => openContactModal(contact)}>{contact.name}</td>
+                    <td>{contact.phone_number}</td>
+                    <td>{contact.email}</td>
+                    <td>{contact.service}</td>
+                    <td>{contact.message}</td>
+                    <td>{contact.status}</td>
+                    <td style={{ display: 'flex', alignItems: 'center' }}>
+
+                      <Select
+                        options={statusOptions}
+                        value={statusOptions.find((option) => option.value === contact.status)}
+                        onChange={(selectedOption) => handleStatusChange(contact.id, selectedOption.value)}
+                        placeholder="Select Status"
+                        isClearable={false}
+                        styles={{
+                          container: (provided) => ({
+                            ...provided,
+                            width: '150px',
+                          }),
+                        }}
+                      />
+
+                      <button onClick={() => openModal(contact.id)}>{contact.user_id ? contact.username : 'Assign to Salesperson'}</button>
+
                     </td>
                   </tr>
                 ))}
+                {/* Add more rows here as needed */}
               </tbody>
             </table>
           )}
