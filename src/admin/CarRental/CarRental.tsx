@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./CarRental.css";
+import { useState, useEffect } from "react";
+// import "./CarRental.css";
 import { FaBars, FaCar, FaUsers, FaGlassCheers, FaUserCircle } from "react-icons/fa";
 import dynamicmainpagelogo from '../../assets/adminImages/dynamicmainpagelogo.png'
 import { Link, useLocation } from "react-router-dom";

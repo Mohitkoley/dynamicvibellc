@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import './UserProfile.css';
 
 const UserProfile = () => {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
@@ -57,55 +56,104 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="user-profile">
-      <h2>User Profile</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Username</label>
-          <input defaultValue={userData.username}
-            {...register('username', { required: 'Username is required' })}
-
-          />
-          {errors.username && <p>{errors.username.message as string}</p>}
+    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="px-6 py-8">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">User Profile</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Username
+                  </label>
+                  <input
+                    defaultValue={userData?.username}
+                    {...register('username', { required: true })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  />
+                  {errors.username && <span className="text-red-500 text-sm mt-1">This field is required</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    First Name
+                  </label>
+                  <input
+                    defaultValue={userData?.first_name}
+                    {...register('first_name', { required: true })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  />
+                  {errors.first_name && <span className="text-red-500 text-sm mt-1">This field is required</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Last Name
+                  </label>
+                  <input
+                    defaultValue={userData?.last_name}
+                    {...register('last_name', { required: true })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  />
+                  {errors.last_name && <span className="text-red-500 text-sm mt-1">This field is required</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Email
+                  </label>
+                  <input
+                    defaultValue={userData?.email}
+                    {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  />
+                  {errors.email && <span className="text-red-500 text-sm mt-1">Please enter a valid email</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
+                  </label>
+                  <input
+                    defaultValue={userData?.phone_number}
+                    {...register('phone_number', { required: true })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  />
+                  {errors.phone_number && <span className="text-red-500 text-sm mt-1">This field is required</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Password
+                  </label>
+                  <input
+                    defaultValue={userData?.password}
+                    {...register('password', { required: true })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                  />
+                  {errors.password && <span className="text-red-500 text-sm mt-1">This field is required</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Role
+                  </label>
+                  <input
+                    defaultValue={userData?.role}
+                    {...register('role', { required: true })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                    disabled
+                  />
+                  {errors.role && <span className="text-red-500 text-sm mt-1">This field is required</span>}
+                </div>
+              </div>
+              <div className="flex justify-end pt-4">
+                <button
+                  type="submit"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+                >
+                  Update Profile
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-          <label>Email</label>
-          <input defaultValue={userData.email}
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: 'Invalid email address'
-              }
-            })}
-          />
-          {errors.email && <p>{errors.email.message as string}</p>}
-        </div>
-        <div>
-          <label>First Name</label>
-          <input defaultValue={userData.first_name} {...register('first_name')} />
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input defaultValue={userData.last_name} {...register('last_name')} />
-        </div>
-        <div>
-          <label>Phone Number</label>
-          <input defaultValue={userData.phone_number} {...register('phone_number')} />
-        </div>
-        <div>
-          <label>Password</label>
-          <input defaultValue={userData.password} {...register('password')} />
-        </div>
-        <div>
-          <label>Role</label>
-          <input defaultValue={userData.role} {...register('role')} disabled />
-        </div>
-
-
-
-        <button type="submit">Update Profile</button>
-      </form>
+      </div>
     </div>
   );
 };

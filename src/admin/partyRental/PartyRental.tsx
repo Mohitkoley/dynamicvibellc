@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./PartyRental.css";
 import { FaBars, FaCar, FaUsers, FaGlassCheers, FaUserCircle } from "react-icons/fa";
 import dynamicmainpagelogo from '../../assets/adminImages/dynamicmainpagelogo.png'
