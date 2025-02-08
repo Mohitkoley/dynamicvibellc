@@ -130,8 +130,6 @@ const Dashboard = () => {
     }
   };
 
-  console.log(contactData);
-
   useEffect(() => {
     fetchContactData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -277,8 +275,8 @@ const Dashboard = () => {
                     <td className="cursor-pointer hover:text-blue-600" onClick={() => openContactModal(contact)}>{contact.name}</td>
                     <td>{contact.phone_number}</td>
                     <td>{contact.email}</td>
-                    <td>{contact.service}</td>
-                    <td>{contact.message}</td>
+                    <td>{contact.tent_types}</td>
+                    <td>{contact.additional_info}</td>
                     <td>{contact.status}</td>
                     <td style={{ display: 'flex', alignItems: 'center' }}>
 
