@@ -217,12 +217,12 @@ const Dashboard = () => {
         {/* Menu Items */}
         {/* Menu Items */}
         <ul>
-          <li className={location.pathname === "/admin/dashboard/car-rental" ? "active" : ""}>
+          {/* <li className={location.pathname === "/admin/dashboard/car-rental" ? "active" : ""}>
             <Link to="/admin/dashboard/car-rental">
               <FaCar className="icon" />
               {isSidebarOpen && <span>Car Rental</span>}
             </Link>
-          </li>
+          </li> */}
           <li className={location.pathname === "/admin/dashboard/party-rental" ? "active" : ""}>
             <Link to="/admin/dashboard/party-rental">
               <FaGlassCheers className="icon" />
