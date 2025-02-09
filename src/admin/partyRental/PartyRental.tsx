@@ -60,7 +60,7 @@ const Dashboard = () => {
   const UserProfile = () => {
     window.location.href = '/admin/dashboard/user-profile';
   }
-
+  
 
   const openModal = (contactId) => {
     fetchSalespersons();
