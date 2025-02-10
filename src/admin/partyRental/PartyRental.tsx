@@ -156,7 +156,7 @@ const Dashboard = () => {
   const handleStatusChange = async (contactId, newStatus) => {
     try {
       // Update status on the server
-      const response = await fetch('https://dynamicvibellc.com/api/v1/admin/car-status', {
+      const response = await fetch('https://dynamicvibellc.com/api/v1/admin/rental-status', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
