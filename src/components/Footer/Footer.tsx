@@ -64,6 +64,9 @@ const Footer = () => {
           </span>
         </div>
       </div>
+      <div className="copyright text-center text-gray-400 text-lg mt-4">
+        Copyright &copy; {new Date().getFullYear()} Dynamic Vibe. All Rights Reserved
+      </div>
     </section>
   );
 };
