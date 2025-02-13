@@ -48,7 +48,7 @@ const Footer = () => {
         {/* Footer Logo */}
         <span className="FooterLogo font-lobster text-gradient text-4xl md:mr-6 cursor-pointer"
         >
-          <img src={logo}  alt="Logo" className="logo w-20 h-12" />
+          <img src={logo}  alt="Logo" className="logo w-[120px] h-[75px]" />
         </span>
       </div>
 
