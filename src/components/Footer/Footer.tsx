@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="belowline w-full flex md:justify-between justify-center flex-wrap items-center mt-4 px-6">
         {/* Left Section */}
         <div className="left-section flex gap-6 flex-wrap md:mb-0 mb-4">
-          <span className="cursor-pointer hover:underline">Email</span>
+          {/* <span className="cursor-pointer hover:underline">Email</span>
           <span
             className="cursor-pointer hover:underline"
             onClick={() => navigate('#')}
@@ -45,12 +45,12 @@ const Footer = () => {
             onClick={() => navigate('#')}
           >
             Terms of Service
-          </span>
+          </span> */}
         </div>
 
         {/* Right Section */}
         <div className="right-section flex gap-4 flex-wrap md:mr-6">
-          <span
+          {/* <span
             className="cursor-pointer hover:underline"
             onClick={() => navigate('#')}
           >
@@ -61,7 +61,7 @@ const Footer = () => {
             onClick={() => navigate('#')}
           >
             <AiFillFacebook />
-          </span>
+          </span> */}
         </div>
       </div>
       <div className="copyright text-center text-gray-400 text-lg mt-4">
