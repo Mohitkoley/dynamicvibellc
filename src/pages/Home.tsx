@@ -9,8 +9,8 @@ const Home = () => {
     <div className="min-h-screen bg-custom-gradient-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <HomeIntro />
-        <AboutUs />
-        <Services />
+        <AboutUs id="about-section" />
+        <Services id="services-section" />
         <TestimonialsSwiper />
       </div>
       <Footer />

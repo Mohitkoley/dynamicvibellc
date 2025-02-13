@@ -5,16 +5,42 @@ import logo from "../../assets/images/logo.png"
 
 const Footer = () => {
   const navigate = useNavigate();
+
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about-section');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If we're not on the home page, navigate to home and then scroll
+      navigate('/', { state: { scrollToAbout: true } });
+    }
+  };
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollToServices: true } });
+    }
+  };
+
   return (
     <section className="FooterContainer flex flex-col text-white py-6">
       {/* Links Section */}
       <div className="AboveLine w-full flex md:flex-row flex-col md:justify-between justify-center items-center mb-4 px-6">
         {/* Infolinks */}
         <div className="infolinks flex gap-6 flex-wrap md:mb-0 mb-4">
-          <span className="cursor-pointer hover:underline">
+          <span 
+            className="cursor-pointer hover:underline"
+            onClick={scrollToAbout}
+          >
             About Us
           </span>
-          <span className="cursor-pointer hover:underline">
+          <span 
+            className="cursor-pointer hover:underline"
+            onClick={scrollToServices}
+          >
             Services
           </span>
         </div>

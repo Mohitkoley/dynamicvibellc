@@ -2,7 +2,11 @@ import { motion } from 'framer-motion';
 import party from "../../../assets/images/party.jpg";
 import car from "../../../assets/images/carride.jpg";
 
-const Services = () => {
+interface ServicesProps {
+  id?: string;
+}
+
+const Services = ({ id }: ServicesProps) => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     whileInView: { opacity: 1, y: 0 },
@@ -11,7 +15,7 @@ const Services = () => {
   };
 
   return (
-    <section id="Services" className="min-h-screen py-20 relative overflow-hidden bg-custom-gradient-2">
+    <section id={id} className="min-h-screen py-20 relative overflow-hidden bg-custom-gradient-2">
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
@@ -50,7 +54,7 @@ const Services = () => {
           <motion.div {...fadeInUp} className="text-container md:w-1/2 md:pr-8 mb-6 md:mb-0 text-center md:text-left">
             <h2 className="text-2xl font-bold mb-4 text-white">Party Service</h2>
             <p className="text-lg leading-relaxed text-gray-200">
-              Make your celebrations unforgettable with our premium party services. From transportation to event planning, we’ve got you covered for a memorable experience.
+              Make your celebrations unforgettable with our premium party services. From transportation to event planning, we've got you covered for a memorable experience.
             </p>
           </motion.div>
           <motion.div {...fadeInUp} className="image-container transition-all duration-500 p-1 md:w-1/2">

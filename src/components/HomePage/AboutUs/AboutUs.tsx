@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import luxuryCar from "../../../assets/images/Car7.png";
 import luxuryInterior from '../../../assets/images/Car6.png';
 
-const AboutUs = () => {
+interface AboutUsProps {
+  id?: string;
+}
+
+const AboutUs = ({ id }: AboutUsProps) => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     whileInView: { opacity: 1, y: 0 },
@@ -12,7 +16,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="aboutus" className="min-h-screen py-20 relative overflow-hidden bg-custom-gradient-2">
+    <section id={id} className="min-h-screen py-20 relative overflow-hidden bg-custom-gradient-2">
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
       {/* Content Container */}
